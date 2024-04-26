@@ -1,5 +1,3 @@
-// app.js
-
 const express = require('express');
 const mongoose = require('mongoose');
 const authRoutes = require('./routes/authRoutes');
@@ -14,7 +12,9 @@ const dot = dotenv.config({ path: dotenvPath });
 
 // Access the environment variables
 const baseUrl = process.env.BASE_URL;
+console.log(baseUrl)
 const db = process.env.DATABASE;
+console.log(db);
 
 const app = express();
 const cors = require('cors');
@@ -37,7 +37,7 @@ mongoose.connect(`${db}`, { useNewUrlParser: true, useUnifiedTopology: true })
   .catch(err => console.error('Failed to connect to MongoDB', err));
 
 // Routes
-app.use(`${baseUrl}/api/auth`, authRoutes);
+app.use(`/`, authRoutes);
 
-const PORT = process.env.PORT || 3020;
+const PORT = process.env.PORT || 6020;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

@@ -14,7 +14,7 @@ const Login = ({ setIsLoggedIn }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3020/api/auth/login", {
+      const response = await axios.post("http://localhost:6020/login", {
         email,
         password,
       });
