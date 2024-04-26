@@ -13,7 +13,7 @@ const Signup = ({ setIsLoggedIn }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3015/api/auth/signup", {
+      await axios.post("http://localhost:3020/api/auth/signup", {
         username,
         email,
         password,
